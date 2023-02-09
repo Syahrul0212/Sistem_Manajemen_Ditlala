@@ -1,0 +1,22 @@
+APP :  folder inti atau core dari codeigniter
+    > folder config : untuk mengatur konfigurasi
+        *)file App : untuk mengatur konfigurasi utama seperti baseUrl, file index, dll
+        *)file Database : untuk mengatur konfigurasi dari database yang akan digunakan
+        *)file routes : untuk megatur jalur akses dari aplikasi, apapun yang diakses oleh user di url bisa diatur di routes
+    > folder controller : untuk menyimpan class-class controller
+    > folder models : untuk mengelola database
+    > folder views : untuk mengatur tampilan
+
+PUBLIC : folder tempat menyimpan asset
+    > file htaccess : untuk mengatur url, url nya gaakan nampilin nama filenya, menggunakan fitur mode rewrite
+    > file favicon.co : untuk membuat icon tab di browser
+    > file index.php : file awalan yang akan menjalankan file2 lainnya di folder app (app->run)
+folder public juga bisa digunakan untuk menyimpan assets lain seperti image, css, js
+
+TEST : digunakan ketika aplikasi codeigniter kita menjalankan testing
+VENDOR : folder tempat menyimpan depedency dari aplikasi, yang keterkaitan depedencynya dikelola oleh file composer.json
+WRITABLE : folder dimana codeigniternya sendiri akan mengisi sesuatu secara otomatis ke dalamnya. 
+
+*)file env : file template untuk mengatur konfigurasi environment, seperti baseURL, database dan lainnya. 
+             jika ingin menjalankan konfigurasinya, hapus tanda #. selama pengaturannya masih ada #, 
+             berati setting ci nya akan menjalankan pengaturan yang ada di folder config.
