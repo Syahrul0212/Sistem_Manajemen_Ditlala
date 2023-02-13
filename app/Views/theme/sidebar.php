@@ -36,6 +36,9 @@
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= site_url('barang') ?>">Data Barang</a>
+                <a class="collapse-item" href="<?= site_url('merk') ?>">Data Merk/Tipe</a>
+                <a class="collapse-item" href="<?= site_url('rak') ?>">Data Rak</a>
+                <a class="collapse-item" href="<?= site_url('pengadaan') ?>">Data Pengadaan</a>
                 </div>
             </div>
         </li>

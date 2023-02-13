@@ -3,7 +3,6 @@
     <thead class="thead-dark">
         <tr>
             <th>No</th>
-           
             <th>Nama Barang</th>
             <th>Jumlah</th>
             <th>Warranty</th>

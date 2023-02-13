@@ -2,50 +2,49 @@
 namespace App\Controllers;
 
 //memanggil model
-use App\Models\BarangModel;
+use App\Models\PengadaanModel;
 
-class Barang extends BaseController
+class Pengadaan extends BaseController
 {
     public function __construct()
     {
         //load model untuk digunakan
-        $this->BarangModel = new BarangModel();
+        $this->PengadaanModel = new PengadaanModel();
 
     }
 
     public function list()
     {
         //select data from table tb_jenis_barang
-        $list = $this->BarangModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
+        $list = $this->PengadaanModel->select('id, pengadaan, tahun, laporan')->findAll();
 
         $output = [
             'list' => $list,
         ];
 
-        return view('barang_list', $output);
+        return view('pengadaan_list', $output);
     }
 
     public function insert()
     {
         //select data from table kategori (untuk data di selectbox/dropdown)
-        $data_barang = $this->BarangModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
+        $data_pengadaan = $this->PengadaanModel->select('id, pengadaan, tahun, laporan')->findAll();
 
         $output = [
-            'data_barang' => $data_barang,
+            'data_pengadaan' => $data_pengadaan,
         ];
 
-        return view('barang_insert', $output);
+        return view('pengadaan_insert', $output);
     }
 
     public function insert_save()
     {
         $id = $this->request->getVar('id');
-        $nama_barang = $this->request->getVar('nama_barang');
-        $jumlah = $this->request->getVar('jumlah');
-        $warranty = $this->request->getVar('warranty');
-        $serial_number = $this->request->getVar('serial_number');
+        $nama_barang = $this->request->getVar('pengadaan');
+        $jumlah = $this->request->getVar('tahun');
+        $warranty = $this->request->getVar('laporan');
 
-        $this->BarangModel->insert([
+        $this->PengadaanModel->insert([
             'id' => $id,
             'nama_barang' => $nama_barang,
             'jumlah' => $jumlah,
@@ -60,10 +59,10 @@ class Barang extends BaseController
     public function update($id)
     {
        //select data kategori yang dipilih (filter by id)
-        $data =  $this->BarangModel->where('id', $id)->first();
+        $data =  $this->PengadaanModel->where('id', $id)->first();
 
         //select data from table kategori (untuk data di selectbox/dropdown)
-        $data_barang = $this->BarangModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
+        $data_barang = $this->PengadaanModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
 
         $output = [
             'data' => $data,
@@ -81,7 +80,7 @@ class Barang extends BaseController
         $warranty = $this->request->getVar('warranty');
         $serial_number = $this->request->getVar('serial_number');
 
-        $this->BarangModel->update($id, [
+        $this->PengadaanModel->update($id, [
             'nama_barang' => $nama_barang,
             'jumlah' => $jumlah,
             'warranty' => $warranty,
@@ -95,7 +94,7 @@ class Barang extends BaseController
     public function delete($id)
     {   
         //delete data table buku filter by id
-        $this->BarangModel->delete($id);
+        $this->PengadaanModel->delete($id);
         return redirect()->to('barang');
     }
 

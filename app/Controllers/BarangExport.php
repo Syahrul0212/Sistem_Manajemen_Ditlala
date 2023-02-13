@@ -23,7 +23,7 @@ class BarangExport extends BaseController
 
     function export_xls()
     {
-        //select data from table buku
+        //select data from table barang
         $list = $this->BarangModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
 
         //filename

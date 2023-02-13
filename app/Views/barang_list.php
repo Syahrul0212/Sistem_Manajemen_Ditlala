@@ -11,7 +11,6 @@
     <thead class="thead-dark">
         <tr>
             <th>No</th>
-           
             <th>Nama Barang</th>
             <th>Jumlah</th>
             <th>Warranty</th>
@@ -38,7 +37,7 @@
 </table>
 
 <br />
-<a href="<?= site_url('buku_export_xls') ?>" class="btn btn-success"><i class="fas fa-download"></i> Export Excel</a>
-<a href="<?= site_url('buku_export_pdf') ?>" class="btn btn-danger"><i class="fas fa-download"></i> Export PDF</a>
+<a href="<?= site_url('barang_export_xls') ?>" class="btn btn-success"><i class="fas fa-download"></i> Export Excel</a>
+<a href="<?= site_url('barang_export_pdf') ?>" class="btn btn-danger"><i class="fas fa-download"></i> Export PDF</a>
 
 <?php $this->endSection('content') ?>

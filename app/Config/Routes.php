@@ -53,6 +53,27 @@ $routes->get('/logout', 'Auth::logout');
 // $routes->get('/get_response/(:segment)/(:segment)', 'Form::get_response/$1/$2');
 
 //crud single table
+$routes->get('/barang', 'Barang::list');
+$routes->get('/barang/insert', 'Barang::insert');
+$routes->post('/barang/insert', 'Barang::insert_save');
+$routes->get('/barang/(:segment)', 'Barang::update/$1');
+$routes->post('/barang/(:segment)', 'Barang::update_save/$1');
+$routes->get('/barang/delete/(:segment)', 'Barang::delete/$1');
+
+$routes->get('/merk', 'Merk::list');
+$routes->get('/merk/insert', 'Merk::insert');
+$routes->post('/merk/insert', 'Merk::insert_save');
+$routes->get('/merk/(:segment)', 'Merk::update/$1');
+$routes->post('/merk/(:segment)', 'Merk::update_save/$1');
+$routes->get('/merk/delete/(:segment)', 'MerK::delete/$1');
+
+$routes->get('/rak', 'Rak::list');
+$routes->get('/rak/insert', 'Rak::insert');
+$routes->post('/rak/insert', 'Rak::insert_save');
+$routes->get('/rak/(:segment)', 'Rak::update/$1');
+$routes->post('/rak/(:segment)', 'Rak::update_save/$1');
+$routes->get('/rak/delete/(:segment)', 'RaK::delete/$1');
+
 // $routes->get('/kategori', 'Kategori::list');
 // $routes->get('/kategori/insert', 'Kategori::insert');
 // $routes->post('/kategori/insert', 'Kategori::insert_save');
@@ -81,12 +102,8 @@ $routes->get('/logout', 'Auth::logout');
 
 
 //crud 1-Many table
-$routes->get('/barang', 'Barang::list');
-$routes->get('/barang/insert', 'Barang::insert');
-$routes->post('/barang/insert', 'Barang::insert_save');
-$routes->get('/barang/(:segment)', 'Barang::update/$1');
-$routes->post('/barang/(:segment)', 'Barang::update_save/$1');
-$routes->get('/barang/delete/(:segment)', 'Barang::delete/$1');
+
+
 
 // $routes->get('/buku', 'Buku::list');
 // $routes->get('/buku/insert', 'Buku::insert');
