@@ -40,20 +40,19 @@ class Pengadaan extends BaseController
     public function insert_save()
     {
         $id = $this->request->getVar('id');
-        $nama_barang = $this->request->getVar('pengadaan');
-        $jumlah = $this->request->getVar('tahun');
-        $warranty = $this->request->getVar('laporan');
+        $pengadaan = $this->request->getVar('pengadaan');
+        $tahun = $this->request->getVar('tahun');
+        $laporan = $this->request->getVar('laporan');
 
         $this->PengadaanModel->insert([
             'id' => $id,
-            'nama_barang' => $nama_barang,
-            'jumlah' => $jumlah,
-            'warranty' => $warranty,
-            'serial_number' => $serial_number,
+            'pengadaan' => $pengadaan,
+            'tahun' => $tahun,
+            'laporan' => $laporan,
 
         ]);
 
-        return redirect()->to('barang');
+        return redirect()->to('pengadaan');
     }
 
     public function update($id)
@@ -62,32 +61,33 @@ class Pengadaan extends BaseController
         $data =  $this->PengadaanModel->where('id', $id)->first();
 
         //select data from table kategori (untuk data di selectbox/dropdown)
-        $data_barang = $this->PengadaanModel->select('id, nama_barang, jumlah, warranty, serial_number')->findAll();
+        $data_pengadaan = $this->PengadaanModel->select('id, pengadaan, tahun, laporan')->findAll();
 
         $output = [
             'data' => $data,
-            'data_barang' => $data_barang,
+            'data_pengadaan' => $data_pengadaan,
         ];
 
-        return view('barang_update', $output);
+        return view('pengadaan_update', $output);
     }
 
     public function update_save($id)
     {
 
-        $nama_barang = $this->request->getVar('nama_barang');
-        $jumlah = $this->request->getVar('jumlah');
-        $warranty = $this->request->getVar('warranty');
-        $serial_number = $this->request->getVar('serial_number');
+        $id = $this->request->getVar('id');
+        $pengadaan = $this->request->getVar('pengadaan');
+        $tahun = $this->request->getVar('tahun');
+        $laporan = $this->request->getVar('laporan');
 
-        $this->PengadaanModel->update($id, [
-            'nama_barang' => $nama_barang,
-            'jumlah' => $jumlah,
-            'warranty' => $warranty,
-            'serial_number' => $serial_number,
+        $this->PengadaanModel->update([
+            'id' => $id,
+            'pengadaan' => $pengadaan,
+            'tahun' => $tahun,
+            'laporan' => $laporan,
+
         ]);
 
-        return redirect()->to('barang/');
+        return redirect()->to('pengadaan/');
     }
 
     
@@ -95,7 +95,7 @@ class Pengadaan extends BaseController
     {   
         //delete data table buku filter by id
         $this->PengadaanModel->delete($id);
-        return redirect()->to('barang');
+        return redirect()->to('pengadaan');
     }
 
 }

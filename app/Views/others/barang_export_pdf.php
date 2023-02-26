@@ -1,5 +1,5 @@
-
-<table border="1">
+<h1 style="text-align:center;">Tabel Barang</h1>
+<table class="table table-stripped" id="dataTable" width="100%" cellspacing="0" border="1">
     <thead class="thead-dark">
         <tr>
             <th>No</th>
@@ -7,7 +7,6 @@
             <th>Jumlah</th>
             <th>Warranty</th>
             <th>Serial Number</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>

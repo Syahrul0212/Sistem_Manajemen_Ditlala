@@ -14,6 +14,7 @@
             <th>Pengadaan</th>
             <th>Tahun</th>
             <th>Laporan</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>

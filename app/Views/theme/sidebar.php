@@ -11,12 +11,18 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="<?= site_url('chart'); ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
-    </li>
+        <div id="collapseStok" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= site_url('chart/pie') ?>">Pie</a>
+                <a class="collapse-item" href="<?= site_url('chart/line') ?>">Line</a>
+            </div>
+        </div>
+    </li> -->
 
     <?php if (session()->get('tipe') == 'admin') : ?>
         <!-- Divider -->
@@ -28,39 +34,35 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>CRUD DATA</span>
+                <span>Dashboard</span>
             </a>
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= site_url('barang') ?>">Data Barang</a>
-                <a class="collapse-item" href="<?= site_url('merk') ?>">Data Merk/Tipe</a>
-                <a class="collapse-item" href="<?= site_url('rak') ?>">Data Rak</a>
-                <a class="collapse-item" href="<?= site_url('pengadaan') ?>">Data Pengadaan</a>
+                    <a class="collapse-item" href="<?= site_url('chart/pie') ?>">Pie</a>
                 </div>
             </div>
-        </li>
+        </li> -->
     <?php endif ?>
 
-    <?php if (session()->get('tipe') == 'staff') : ?>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStok" aria-expanded="true" aria-controls="collapseStok">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Chart</span>
+                <span>Sistem Manajemen Assets</span>
             </a>
             <div id="collapseStok" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= site_url('chart/pie') ?>">Pie</a>
-                    <a class="collapse-item" href="<?= site_url('chart/line') ?>">Line</a>
+                    <a class="collapse-item" href="<?= site_url('jenisbarang') ?>">Penyimpanan Assets</a>
+                    <a class="collapse-item" href="<?= site_url('merk') ?>">Merk</a>
                 </div>
             </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLaporan" aria-expanded="true" aria-controls="collapseLaporan">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Laporan</span>
@@ -71,8 +73,7 @@
                     <a class="collapse-item" href="<?= site_url('chart/line') ?>">Peminjaman</a>
                 </div>
             </div>
-        </li>
-    <?php endif ?>
+        </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

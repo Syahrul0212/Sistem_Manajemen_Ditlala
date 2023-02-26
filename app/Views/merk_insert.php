@@ -7,15 +7,9 @@
   <br>
   <table class="table table-striped">
     <tr>
-      <td class="font-weight-bold">Nama Merk/Tipe</td>
+      <td class="font-weight-bold">Nama Merk</td>
       <td>
-      <input type="text" name="nama_merk" value="" class="form-control"/>
-      </td>
-    </tr>
-    <tr>
-      <td class="font-weight-bold">Jumlah</td>
-      <td>
-        <input type="number" name="jumlah" value="" class="form-control"/>
+      <input type="text" name="nama" value="" class="form-control"/>
       </td>
     </tr>
     <tr>

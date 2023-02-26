@@ -17,7 +17,7 @@
             </td>
         </tr>
         <tr>
-            <td>Judul</td>
+            <td>Judul</td>                  
             <td>
                 <input type="text" name="judul" value="" class="form-control" />
             </td>

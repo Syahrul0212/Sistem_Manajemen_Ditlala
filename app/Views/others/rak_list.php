@@ -31,7 +31,7 @@
 </table>
 
 <br />
-<a href="<?= site_url('buku_export_xls') ?>" class="btn btn-success"><i class="fas fa-download"></i> Export Excel</a>
-<a href="<?= site_url('buku_export_pdf') ?>" class="btn btn-danger"><i class="fas fa-download"></i> Export PDF</a>
+<a href="<?= site_url('rak_export_xls') ?>" class="btn btn-success"><i class="fas fa-download"></i> Export Excel</a>
+<a href="<?= site_url('rak_export_pdf') ?>" class="btn btn-danger"><i class="fas fa-download"></i> Export PDF</a>
 
 <?php $this->endSection('content') ?>

@@ -9,7 +9,7 @@
     <tr>
       <td class="font-weight-bold">Pengadaan</td>
       <td>
-      <input type="text" name="pengadaan" value="" class="form-control"/>
+      <input type="number" name="pengadaan" value="" class="form-control"/>
       </td>
     </tr>
     <tr>
@@ -21,7 +21,7 @@
     <tr>
       <td class="font-weight-bold">Laporan</td>
       <td>
-        <input type="date" name="laporan" value="" class="form-control"/>
+        <input type="text" name="laporan" value="" class="form-control"/>
       </td>
     </tr>
     <tr>

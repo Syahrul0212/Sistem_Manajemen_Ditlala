@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 //memanggil model
@@ -10,13 +11,12 @@ class Merk extends BaseController
     {
         //load model untuk digunakan
         $this->MerkModel = new MerkModel();
-
     }
 
     public function list()
     {
-        //select data from table tb_jenis_barang
-        $list = $this->MerkModel->select('id, nama_merk, jumlah')->findAll();
+        //select data from table kategori
+        $list = $this->MerkModel->select('id, nama')->orderBy('nama')->findAll();
 
         $output = [
             'list' => $list,
@@ -27,27 +27,16 @@ class Merk extends BaseController
 
     public function insert()
     {
-        //select data from table "" (untuk data di selectbox/dropdown)
-        $data_merk = $this->MerkModel->select('id, nama_merk, jumlah')->findAll();
-
-        $output = [
-            'data_merk' => $data_merk,
-        ];
-
-        return view('merk_insert', $output);
+        return view('merk_insert');
     }
 
     public function insert_save()
     {
-        $id = $this->request->getVar('id');
-        $nama_merk = $this->request->getVar('nama_merk');
-        $jumlah = $this->request->getVar('jumlah');
+        $nama = $this->request->getVar('nama');
 
+        //insert data ke table kategori
         $this->MerkModel->insert([
-            'id'        => $id,
-            'nama_merk' => $nama_merk,
-            'jumlah'    => $jumlah,
-
+            'nama' => $nama,
         ]);
 
         return redirect()->to('merk');
@@ -55,15 +44,11 @@ class Merk extends BaseController
 
     public function update($id)
     {
-       //select data kategori yang dipilih (filter by id)
+        //select data kategori yang dipilih (filter by id)
         $data =  $this->MerkModel->where('id', $id)->first();
-
-        //select data from table kategori (untuk data di selectbox/dropdown)
-        $data_merk = $this->MerkModel->select('id, nama_merk, jumlah')->findAll();
 
         $output = [
             'data' => $data,
-            'data_merk' => $data_merk,
         ];
 
         return view('merk_update', $output);
@@ -71,25 +56,20 @@ class Merk extends BaseController
 
     public function update_save($id)
     {
-        $nama_merk = $this->request->getVar('nama_merk');
-        $jumlah = $this->request->getVar('jumlah');
+        $nama = $this->request->getVar('nama');
 
+        //update data ke table kategori filter by id
         $this->MerkModel->update($id, [
-            'nama_merk' => $nama_merk,
-            'jumlah'    => $jumlah,
-            
+            'nama' => $nama,
         ]);
 
         return redirect()->to('merk/');
     }
 
-    
     public function delete($id)
-    {   
-        //delete data table buku filter by id
+    {
+        //delete data table kategori filter by id
         $this->MerkModel->delete($id);
         return redirect()->to('merk');
     }
-
-
 }

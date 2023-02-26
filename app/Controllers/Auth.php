@@ -49,7 +49,7 @@ class Auth extends BaseController
 
                 //jika tipe user : admin
                 if ($data['tipe'] == 'admin') {
-                    return redirect()->to('barang');
+                    return redirect()->to('jenisbarang');
 
                     //jika tipe user : petugas
                 } else {

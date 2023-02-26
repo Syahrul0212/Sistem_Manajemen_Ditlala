@@ -9,20 +9,20 @@
         <tr>
             <td class="font-weight-bold">Pengadaan</td>
             <td>
-                <input type="text" name="pengadaan" value="<?= $data['nama_barang'] ?>" class="form-control" />
+                <input type="text" name="pengadaan" value="<?= $data['pengadaan'] ?>" class="form-control" />
             </td>
         </tr>
         <tr>
             <td class="font-weight-bold">Tahun</td>
             <td>
-                <input type="number" name="tahun" value="<?= $data['jumlah'] ?>" class="form-control" />
+                <input type="number" name="tahun" value="<?= $data['tahun'] ?>" class="form-control" />
             </td>
             
         </tr>
         <tr>
             <td class="font-weight-bold">Laporan</td>
                 <td>
-                    <input type="date" name="laporan" value="<?= $data['warranty'] ?>" class="form-control" />
+                    <input type="date" name="laporan" value="<?= $data['laporan'] ?>" class="form-control" />
                 </td>
         </tr>
             <td>&nbsp;</td>

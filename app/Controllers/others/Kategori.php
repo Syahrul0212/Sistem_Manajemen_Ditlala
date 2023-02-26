@@ -16,7 +16,7 @@ class Kategori extends BaseController
     public function list()
     {
         //select data from table kategori
-        $list = $this->KategoriModel->select('id, nama')->orderBy('nama')->findAll();
+        $list = $this->KategoriModel->select('id, merk')->orderBy('nama')->findAll();
 
         $output = [
             'list' => $list,
